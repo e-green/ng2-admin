@@ -1,0 +1,28 @@
+<ba-card>
+  <div>
+    <div class="form-group">
+      <label for="code">Search</label>
+      <input class="form-control" id="code" placeholder="Item Code" type="text">
+    </div>
+    <div>
+      <table class="table">
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Edit</th>
+        </tr>
+        <tr *ngFor="let supplier of suppliers">
+          <td>{{supplier.code}}</td>
+          <td>{{supplier.name}}</td>
+          <td>{{supplier.tpNumber}}</td>
+          <td>
+            <a [routerLink]="['/pages/supplier/supplier-add',supplier.code]">Supplier</a>
+          </td>
+        </tr>
+
+
+      </table>
+    </div>
+  </div>
+</ba-card>

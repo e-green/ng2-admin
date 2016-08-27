@@ -1,1 +1,7 @@
 @import "theme/theme";
+//libs
+@import "~ng2-toastr/bundles/ng2-toastr.min";
+
+.modal-dialog {
+  margin: 250px auto;
+}

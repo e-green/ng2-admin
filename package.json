@@ -17,6 +17,7 @@
     "@angular/router": "3.0.0-beta.2",
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
+    "angular2-notifications": "^0.3.1",
     "animate.css": "^3.5.1",
     "bootstrap": "4.0.0-alpha.2",
     "bootstrap-loader": "^1.0.10",
@@ -38,9 +39,14 @@
     "leaflet": "^0.7.7",
     "leaflet-map": "^0.2.1",
     "lodash": "^4.12.0",
+    "ng2-auto-complete": "^0.5.3",
     "ng2-bootstrap": "^1.0.20",
     "ng2-branchy": "^0.0.2-5",
     "ng2-ckeditor": "^1.0.4",
+    "ng2-modal": "0.0.17",
+    "ng2-notifications": "^0.3.0",
+    "ng2-toastr": "^0.3.1",
+    "ng2-typeahead": "^0.5.17",
     "ng2-uploader": "0.5.6",
     "normalize.css": "^4.1.1",
     "rxjs": "5.0.0-beta.6",
@@ -93,7 +99,9 @@
     "compression-webpack-plugin": "^0.3.1",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
-    "es7-reflect-metadata": "^1.6.0"
+    "es7-reflect-metadata": "^1.6.0",
+    "rx": "^4.0.7",
+    "rx-dom": "^7.0.3"
   },
   "scripts": {
     "rimraf": "rimraf",

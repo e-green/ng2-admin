@@ -1,0 +1,24 @@
+<ba-card>
+  <div>
+    <legend>SupplierModel Information</legend>
+    <div class="form-group">
+      <label for="code">SupplierModel Code</label>
+      <input #supplier_code autofocus class="form-control" id="code" placeholder="SupplierModel Code"
+             [(ngModel)]="supplier.code" type="text">
+    </div>
+    <div class="form-group">
+      <label for="name">SupplierModel Name</label>
+      <input class="form-control" id="name" placeholder="SupplierModel Name" [(ngModel)]="supplier.name" type="text">
+    </div>
+    <div class="form-group">
+      <label for="name">SupplierModel NIC</label>
+      <input class="form-control" id="nic" placeholder="SupplierModel NIC" [(ngModel)]="supplier.nic" type="number">
+    </div>
+    <div class="form-group">
+      <label for="name">SupplierModel Number</label>
+      <input class="form-control" (keydown.enter)="saveSupplier()" id="number" placeholder="SupplierModel Number"
+             [(ngModel)]="supplier.tpNumber" type="tel">
+    </div>
+    <button class="btn btn-default" (click)="saveSupplier()">Save</button>
+  </div>
+</ba-card>

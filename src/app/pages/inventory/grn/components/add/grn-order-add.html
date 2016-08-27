@@ -1,0 +1,42 @@
+<ba-card [title]="grnModel.orderTotal">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="name">SupplierModel Name</label>
+
+        <select class="form-control" style="width: 100%" id="unit" [(ngModel)]="grnModel.supplierCode" required>
+          <option *ngFor=" let supplier of suppliers" [value]="supplier.code">{{supplier.name}}</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <label for="name">Order Date</label>
+        <input class="form-control" id="date" disabled="{{grnModel.code}}"
+               value="{{grnModel.recivedTime | date}}"
+               placeholder="Order date" type="datetime">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="name">Order Total Price</label>
+        <input class="form-control" id="total" disabled [(ngModel)]="grnModel.orderTotal" type="number">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Order Total pcs</label>
+        <input class="form-control" id="totalPcs" [(ngModel)]="grnModel.orderTotalPcs" disabled type="number">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-info" (click)="createGrn()" *ngIf="!grnModel.code">Create GRN</button>
+      <button class="btn btn-primary" (click)="finishGrn()" *ngIf="grnModel.code">
+        <strong>Finish GRN</strong></button>
+    </div>
+
+  </div>
+
+</ba-card>
+
+

@@ -1,5 +1,5 @@
 import './app.loader.ts';
-import {Component, ViewEncapsulation} from "@angular/core";
+import {Component, ViewEncapsulation, ViewContainerRef} from "@angular/core";
 import {AppState} from "./app.state";
 import {BaThemeConfigProvider, BaThemeConfig} from "./theme";
 import {BaThemeRun} from "./theme/directives";
@@ -26,24 +26,28 @@ import {layoutPaths} from "./theme/theme.constants";
 })
 export class App {
 
-  isMenuCollapsed:boolean = false;
+  isMenuCollapsed: boolean = false;
+  viewContainerRef;
 
-  constructor(private _state:AppState, private _imageLoader:BaImageLoaderService, private _spinner:BaThemeSpinner, private _config:BaThemeConfig) {
+  constructor(viewContainerRef: ViewContainerRef, private _state: AppState, private _imageLoader: BaImageLoaderService, private _spinner: BaThemeSpinner, private _config: BaThemeConfig) {
     this._loadImages();
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
+
+    // You need this small hack in order to catch application root view container ref
+    this.viewContainerRef = viewContainerRef;
   }
 
-  public ngAfterViewInit():void {
+  public ngAfterViewInit(): void {
     // hide spinner once all loaders are completed
     BaThemePreloader.load().then((values) => {
       this._spinner.hide();
     });
   }
 
-  private _loadImages():void {
+  private _loadImages(): void {
     // register some loaders
     BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
   }

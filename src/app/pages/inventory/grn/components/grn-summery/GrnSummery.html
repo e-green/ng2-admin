@@ -1,0 +1,36 @@
+<ba-card>
+  <div >
+    <div class="form-group">
+      <label for="code">Search</label>
+      <input class="form-control" id="code" placeholder="Item Code" type="text">
+    </div>
+    <div>
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Re Order Level</th>
+          <th>Category</th>
+          <th>Supplier</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>12</td>
+          <td>100</td>
+          <td>SOAP</td>
+          <td>
+            <a [routerLink]="['/pages/inventory/item-inventory','ITEM_001']">Supplier</a>
+          </td>
+          <td>
+            <a href="#">Edit</a>
+          </td>
+        </tr>
+
+
+      </table>
+    </div>
+  </div>
+</ba-card>
