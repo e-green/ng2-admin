@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-9">
+
+    <gsn-inventory></gsn-inventory>
+
+
+  </div>
+  <div class="col-md-3">
+    <!--Order Date-->
+    <ba-card>
+      <div>
+        <label for="code">Order date</label>
+        <h4>{{gsnOrderModel.orderDate | date}}</h4>
+        <h4>
+          <small>{{gsnOrderModel.orderDate | date:'shortTime'}}</small>
+        </h4>
+      </div>
+    </ba-card>
+    <!--Order Customer-->
+    <ba-card>
+      <div>
+        <label for="code">Customer</label>
+        <h4 *ngIf="gsnOrderModel.customerCode">{{gsnOrderModel?.customerCode}}</h4>
+        <div class="form-group" *ngIf="!gsnOrderModel.customerCode">
+
+          <input class="form-control" id="code" placeholder="Customer Code" type="text">
+        </div>
+      </div>
+    </ba-card>
+    <!--Order Total-->
+    <ba-card>
+      <div>
+        <label for="code">Order Total</label>
+
+        <h4>
+          {{gsnOrderModel.orderTotal | currency:'LKR':false:'4.2-2'}}
+        </h4>
+      </div>
+    </ba-card>
+
+
+  </div>
+</div>
+
+
