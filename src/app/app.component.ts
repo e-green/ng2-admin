@@ -28,8 +28,8 @@ export class App {
 
   isMenuCollapsed: boolean = false;
   viewContainerRef;
-
-  constructor(viewContainerRef: ViewContainerRef, private _state: AppState, private _imageLoader: BaImageLoaderService, private _spinner: BaThemeSpinner, private _config: BaThemeConfig) {
+  // viewContainerRef: ViewContainerRef,
+  constructor( private _state: AppState, private _imageLoader: BaImageLoaderService, private _spinner: BaThemeSpinner, private _config: BaThemeConfig) {
     this._loadImages();
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
@@ -37,7 +37,7 @@ export class App {
     });
 
     // You need this small hack in order to catch application root view container ref
-    this.viewContainerRef = viewContainerRef;
+    // this.viewContainerRef = viewContainerRef;
   }
 
   public ngAfterViewInit(): void {

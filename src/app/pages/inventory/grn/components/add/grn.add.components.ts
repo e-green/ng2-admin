@@ -9,10 +9,9 @@ import {BaCard} from "../../../../../theme/components/baCard";
 import {GrnOrderService} from "../../../../../service/grn/GrnOrderService";
 import {GrnOrder} from "../../../../../model/GrnOrder";
 import {ToastsManager} from "ng2-toastr/src/toast-manager";
-import {TYPEAHEAD_DIRECTIVES} from "ng2-bootstrap/components/typeahead";
 import {ItemService} from "../../../../../service/item/ItemService";
 import {SupplierService} from "../../../../../service/supplier/SupplierService";
-import {ROUTER_DIRECTIVES, Router} from "@angular/router";
+// import {ROUTER_DIRECTIVES, Router} from "@angular/router";
 
 
 let window: any
@@ -20,9 +19,9 @@ let window: any
 @Component({
   selector: 'grn-add',
   pipes: [],
-  directives: [BaCard, TYPEAHEAD_DIRECTIVES],
+  directives: [BaCard],
   styles: [],
-  providers: [GrnOrderService, ToastsManager, ItemService, SupplierService, ROUTER_DIRECTIVES],
+  providers: [GrnOrderService, ToastsManager, ItemService, SupplierService],
   template: require('./grn-order-add.html')
 })
 export class GRNAdd {
@@ -34,7 +33,7 @@ export class GRNAdd {
   items: any[] = [];
 
 
-  constructor(private _router: Router,
+  constructor(
               private _grnService: GrnOrderService,
               private _itemService: ItemService,
               private _supplierService: SupplierService,
@@ -77,7 +76,7 @@ export class GRNAdd {
       (data)=> {
         this.grnModel = this._grnService.getModel();
         this._toast.success("Grn Order Completed", "Hurray !!");
-        this._router.navigate(['/pages/inventory']);
+        // this._router.navigate(['/pages/inventory']);
       }
     )
 

@@ -1,0 +1,20 @@
+<ba-card>
+  <div>
+    <legend>CustomerModel Information</legend>
+    <div class="form-group">
+      <label for="code">CustomerModel Code</label>
+      <input #customer_code autofocus class="form-control" id="code" placeholder="CustomerModel Code"
+             [(ngModel)]="customer.code" type="text">
+    </div>
+    <div class="form-group">
+      <label for="name">CustomerModel Name</label>
+      <input class="form-control" id="name" placeholder="CustomerModel Name" [(ngModel)]="customer.name" type="text">
+    </div>
+    <div class="form-group">
+      <label for="name">CustomerModel NIC</label>
+      <input class="form-control" id="nic" placeholder="CustomerModel NIC" [(ngModel)]="customer.nic" type="number">
+    </div>
+
+    <button class="btn btn-default" (click)="saveCustomer()">Save</button>
+  </div>
+</ba-card>

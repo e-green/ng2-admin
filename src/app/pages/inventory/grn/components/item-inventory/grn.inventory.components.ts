@@ -11,15 +11,14 @@ import {ToastsManager} from "ng2-toastr/src/toast-manager";
 import {GrnOrderService} from "../../../../../service/grn/GrnOrderService";
 import {GrnOrder} from "../../../../../model/GrnOrder";
 import {ItemService} from "../../../../../service/item/ItemService";
-import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from "ng2-bootstrap";
 import {BatchService} from "../../../../../service/batch/BatchService";
 
 @Component({
   selector: 'grn-inventory',
   pipes: [],
-  directives: [BaCard, MODAL_DIRECTIVES],
+  directives: [BaCard],
   styles: [],
-  providers: [ToastsManager, GrnOrderService, ItemService, BatchService, BS_VIEW_PROVIDERS],
+  providers: [ToastsManager, GrnOrderService, ItemService, BatchService],
   template: require('./grnInventory.html')
 })
 export class GrnItemInventory implements OnChanges {

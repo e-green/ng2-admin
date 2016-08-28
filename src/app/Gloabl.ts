@@ -8,6 +8,9 @@ export class Constant {
   public static SUPPLIER_URL: string = Constant.BASE_URL + "/supplier";
   public static GRN_URL: string = Constant.BASE_URL + "/grn";
   public static BATCH_URL: string = Constant.BASE_URL + "/batch";
+  public static CUSTOMER_URL: string = Constant.BASE_URL + "/customer";
+  public static GSN_URL: string = Constant.BASE_URL + "/gsn";
+  public static ORDER_ITEM_URL: string = Constant.BASE_URL + "/orderItem";
 
 
 }

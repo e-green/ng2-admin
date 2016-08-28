@@ -8,6 +8,11 @@ import {ItemInventory} from "./inventory/item/components/item-inventory/item.inv
 import {GrnOrderCreate} from "./inventory/grn/components/grn-create/grn.order.create.components";
 import {Supplier} from "./supplier/supplier.component";
 import {SupplierView} from "./supplier/supplier/components/supplier.components";
+import {CustomerView} from "./customer/customer/components/customer.components";
+import {Customer} from "./customer/customer.component";
+import {CustomerOrderView} from "./customerOrder/order/customer.order.component";
+import {CustomerOrderAddView} from "./customerOrder/order/components/order-add/order.add.component";
+import {CustomerOrder} from "./customerOrder/customer.order.component";
 
 //noinspection TypeScriptValidateTypes
 export const PagesRoutes: RouterConfig = [
@@ -121,6 +126,56 @@ export const PagesRoutes: RouterConfig = [
             data: {
               menu: {
                 title: 'Supplier',
+              }
+            }
+
+          }
+        ]
+      },
+      {
+        path: 'customer',
+        component: Customer,
+        data: {
+          menu: {
+            title: 'Customer',
+            icon: 'ion-items',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        },
+        children: [
+          {
+            path: 'customer',
+            component:CustomerView,
+            data: {
+              menu: {
+                title: 'Customer',
+              }
+            }
+
+          }
+        ]
+      },
+      {
+        path: 'customer.order',
+        component: CustomerOrder,
+        data: {
+          menu: {
+            title: 'CustomerOrder',
+            icon: 'ion-items',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        },
+        children: [
+          {
+            path: 'order',
+            component:CustomerOrderView,
+            data: {
+              menu: {
+                title: 'CustomerOrder',
               }
             }
 

@@ -2,6 +2,8 @@ import {SupplierModel} from "../../model/SupplierModel";
 import {Component} from "@angular/core";
 import {Http, Headers} from "@angular/http";
 import {Constant} from "../../Gloabl";
+import {UpdateSubscriber} from "../UpdateSubscriber";
+import {CustomerModel} from "../../model/CustomerModel";
 /**
  * Created by dewmal on 8/25/16.
  */
@@ -9,16 +11,15 @@ import {Constant} from "../../Gloabl";
     providers: [Http]
   }
 )
-export class SupplierService {
-  static instance: SupplierService;
+export class CustomerService {
+  static instance: CustomerService;
 
   constructor(private http: Http) {
-    return SupplierService.instance = SupplierService.instance || this;
+    return CustomerService.instance = CustomerService.instance || this;
   }
 
 
-  supplier: SupplierModel = new SupplierModel();
-
+  supplier: CustomerModel = new CustomerModel();
 
 
   /**
@@ -29,24 +30,23 @@ export class SupplierService {
    * @returns {Observable<Response>}
    */
   getAll(offset, limit) {
-    return this.http.get(Constant.SUPPLIER_URL + "/getAll/" + offset + "/" + limit);
+    return this.http.get(Constant.CUSTOMER_URL + "/getAll/" + offset + "/" + limit);
   }
 
 
   /**
    * Save SupplierModel
-   * @param supplier
+   * @param customer
    * @returns {Observable<Response>}
    */
-  save(supplier: SupplierModel) {
+  save(customer: CustomerModel) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let subscribe = this.http.post(Constant.SUPPLIER_URL + "/save", JSON.stringify(
+    let subscribe = this.http.post(Constant.CUSTOMER_URL + "/save", JSON.stringify(
       {
-        "code": supplier.code + '',
-        "name": supplier.name + '',
-        "nic": supplier.nic + '',
-        "tpNumber": supplier.tpNumber + ''
+        "code": customer.code + '',
+        "name": customer.name + '',
+        "nic": customer.nic + ''
       }
     ), {
       headers: headers
